@@ -32,8 +32,12 @@ export default class CreatePost extends React.Component {
       const imageFileExt = fileNameArr.pop();
       return `${fileNameArr.join('.').replace(' ', '_')}_${Date.now()}.${imageFileExt}`;
     }
-    API.graphql(graphqlOperation(createPost, {input: {title, description, content, image: ''}})).then(console.log);
-    console.log('saving post: ', {title, description, content, image: ''});
+    API.graphql({
+      query: createPost,
+      variables: {input: {title, description, content, image: ''}},
+      authMode: 'AMAZON_COGNITO_USER_POOLS'
+    }).then(console.log);
+    // console.log('saving post: ', {title, description, content, image: ''});
   }
 
   render() {

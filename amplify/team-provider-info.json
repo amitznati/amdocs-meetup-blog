@@ -10,6 +10,11 @@
       "StackName": "amplify-amdocsmeetupblog-dev-141341",
       "StackId": "arn:aws:cloudformation:us-east-1:947402827748:stack/amplify-amdocsmeetupblog-dev-141341/f53e8580-325f-11ec-93b2-1249701c5f15",
       "AmplifyAppId": "d2k7tpg6vtorn8"
+    },
+    "categories": {
+      "auth": {
+        "amdocsmeetupblog509de6fb": {}
+      }
     }
   }
 }
