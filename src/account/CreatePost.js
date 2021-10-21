@@ -2,6 +2,8 @@ import React from "react";
 import MDEditor from '@uiw/react-md-editor';
 import {Grid, TextField, InputLabel, Button, IconButton} from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
+import { API, graphqlOperation } from 'aws-amplify';
+import { createPost } from '../graphql/mutations';
 
 export default class CreatePost extends React.Component {
   constructor(props) {
@@ -30,8 +32,8 @@ export default class CreatePost extends React.Component {
       const imageFileExt = fileNameArr.pop();
       return `${fileNameArr.join('.').replace(' ', '_')}_${Date.now()}.${imageFileExt}`;
     }
-
-    console.log('saving post: ', {title, description, content, image: getImageName()});
+    API.graphql(graphqlOperation(createPost, {input: {title, description, content, image: ''}})).then(console.log);
+    console.log('saving post: ', {title, description, content, image: ''});
   }
 
   render() {

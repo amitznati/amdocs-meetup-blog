@@ -1,0 +1,5 @@
+{
+  "AppSyncApiName": "amdocsmeetupblog",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false
+}
